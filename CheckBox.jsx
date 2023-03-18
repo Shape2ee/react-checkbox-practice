@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from "react";
-export default function CheckBox({text, id, checkItemHandler, isAllChecked}) {
-  const [checked, setChecked] = useState(false);
-
-  const checkHandled = ({target}) => {
+import React from "react";
+export default function CheckBox({id, checked, checkItemHandler}) {
+  const checkHandled = (e) => {
     console.log('checkHandled')
-    setChecked(!checked);
-    checkItemHandler(target.id, target.checked);
+    checkItemHandler(e.target.id, e.target.checked);
   }
-  
-  const allCheckHandler = () => setChecked(isAllChecked);
-  useEffect(() => allCheckHandler(), [isAllChecked])
 
   return (
     <label>
-      <input id={id} type="checkbox" checked={checked} onChange={(e) => checkHandled(e)}/>
+      <input id={id} type="checkbox" checked={checked} onChange={checkHandled}/>
       {text}
     </label>
   )
