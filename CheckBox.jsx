@@ -8,7 +8,7 @@ export default function CheckBox({id, checked, checkItemHandler}) {
   return (
     <label>
       <input id={id} type="checkbox" checked={checked} onChange={checkHandled}/>
-      {text}
+      {id}
     </label>
   )
 }

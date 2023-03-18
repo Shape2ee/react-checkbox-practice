@@ -17,7 +17,6 @@ export default function App () {
   ]
 
   const [checkItems, setCheckItems] = useState([])
-  const [isAllChecked, setIsAllChecked] = useState(false);
 
   const checkItemHandler = (id, isChecked) => {
     if (isChecked) {
